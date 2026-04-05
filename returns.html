@@ -54,14 +54,15 @@ body{
   </style>
 
 <script>
- document.querySelectorAll('span').forEach(td => {
-  const text = td.innerText.trim();
+ document.querySelectorAll('span').forEach(sp => {
+  const text = sp.innerText.trim();
   if (text.includes('%')) {
+    text = text.replace('%','');
     const value = parseFloat(text);
     if (value < 0) {
-      td.style.color = '#e74c3c'; // Red for negative
+      sp.style.color = '#e74c3c'; // Red for negative
     } else if (value > 0) {
-      td.style.color = '#2ecc71'; // Green for positive
+      sp.style.color = '#2ecc71'; // Green for positive
     }
   }
 });
