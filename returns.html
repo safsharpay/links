@@ -55,11 +55,14 @@ body{
 
 <script>
  document.querySelectorAll('span').forEach(td => {
-  const value = parseFloat(td.innerText);
-  if (value < 0) {
-    td.style.color = '#e74c3c'; // Red for negative
-  } else if (value > 0) {
-    td.style.color = '#2ecc71'; // Green for positive
+  const text = td.innerText.trim();
+  if (text.includes('%')) {
+    const value = parseFloat(text);
+    if (value < 0) {
+      td.style.color = '#e74c3c'; // Red for negative
+    } else if (value > 0) {
+      td.style.color = '#2ecc71'; // Green for positive
+    }
   }
 });
 </script>
