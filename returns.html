@@ -54,7 +54,7 @@ body{
   </style>
 
 <script>
- document.querySelectorAll('td').forEach(td => {
+ document.querySelectorAll('span').forEach(td => {
   const value = parseFloat(td.innerText);
   if (value < 0) {
     td.style.color = '#e74c3c'; // Red for negative
